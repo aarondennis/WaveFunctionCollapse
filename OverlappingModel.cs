@@ -18,13 +18,17 @@ class OverlappingModel : Model
 	List<Color> colors;
 	int ground;
 
-	public OverlappingModel(string name, int N, int width, int height, bool periodicInput, bool periodicOutput, int symmetry, int ground) 
+	public OverlappingModel(string name, int N, int width, int height, bool periodicInput, bool periodicOutput, int symmetry, int ground, bool source) // comment added source bool 
 		: base(width, height)
 	{
 		this.N = N;
 		periodic = periodicOutput;
+		//source = inputSource; // update later to enable procedural input source modifications. 
+		var bitmap = <Bitmap>null; // double check type bitmap is not required 
 
-		var bitmap = new Bitmap($"samples/{name}.png");
+		if (source == 0 ) {bitmap = new Bitmap($"samples/{name}.png")}; // get things up and running now.
+		if (source == 1 ) {bitmap = new Bitmap($"New Folder/{name}.png")}; // confirm syntax on all 
+		  
 		int SMX = bitmap.Width, SMY = bitmap.Height;
 		byte[,] sample = new byte[SMX, SMY];
 		colors = new List<Color>();
