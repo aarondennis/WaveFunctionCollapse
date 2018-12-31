@@ -1,9 +1,16 @@
 ﻿/*
 The MIT License(MIT)
 Copyright(c) mxgmn 2016.
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-The software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation 
+files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, 
+modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the 
+Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the 
+Software.
+The software is provided "as is", without warranty of any kind, express or implied, including but not limited to the 
+warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or 
+copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or 
+otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.
 */
 
 using System;
@@ -26,8 +33,9 @@ static class Program
 			string name = xelem.Get<string>("name");
 			Console.WriteLine($"< {name}");
 
-			if (xelem.Name == "overlapping") model = new OverlappingModel(name, xelem.Get("N", 2), xelem.Get("width", 48), xelem.Get("height", 48), 
-				xelem.Get("periodicInput", true), xelem.Get("periodic", false), xelem.Get("symmetry", 8), xelem.Get("ground", 0) xelem.Get("source", 0);
+			if (xelem.Name == "overlapping") model = new OverlappingModel(name, xelem.Get("N", 2),
+                                xelem.Get("width", 48), xelem.Get("height", 48), xelem.Get("periodicInput", true), 
+				xelem.Get("periodic", false), xelem.Get("symmetry", 8), xelem.Get("ground", 0) xelem.Get("source", 0);
 			else if (xelem.Name == "simpletiled") model = new SimpleTiledModel(name, xelem.Get<string>("subset"), 
 				xelem.Get("width", 10), xelem.Get("height", 10), xelem.Get("periodic", false), xelem.Get("black", false));
 			else continue;
